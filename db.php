@@ -28,7 +28,7 @@
     public static function getInstance($options = null)
     {
         if (self::$db == null) {
-            $db = new Db($options);
+            self::$db = new Db($options);
         }
         return self::$db;
     }
