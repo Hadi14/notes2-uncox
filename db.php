@@ -2,15 +2,22 @@
 {
     private $connect;
     /******************************************************************** */
-    function __construct($s, $u, $p)
+    function __construct($options = null)
     {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "notes";
-
+        if ($options == null) {
+            global $config;
+            $s = $config['db']['host'];
+            $u =  $config['db']['user'];
+            $p = $config['db']['pass'];
+            $db =  $config['db']['dbname'];
+        } else {
+            $s = $options['host'];
+            $u = $options['user'];
+            $p = $options['pass'];
+            $db = $options['dbname'];
+        }
         // Create connection
-        $this->connect = new mysqli($servername, $username, $password, $dbname);
+        $this->connect = new mysqli($s, $u, $p, $db);
         // Check connection
         if ($this->connect->connect_error) {
             echo "Connection failed: " . $this->connect->connect_error;
