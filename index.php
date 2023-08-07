@@ -5,5 +5,5 @@ require_once("common.php");
 $sql = "select * from x_note";
 $db = new Db();
 $records = $db->first($sql);
-
+h
 dump($records);
