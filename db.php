@@ -34,7 +34,7 @@
         $this->connect->close();
     }
     /******************************************************************** */
-    public function query($sql)
+    public function first($sql)
     {
         $result = $this->connect->query($sql);
         if ($result == null) {
@@ -44,7 +44,7 @@
         }
     }
     /******************************************************************** */
-    public function first($sql)
+    public function query($sql)
     {
         $result = $this->connect->query($sql);
         $records = array();
