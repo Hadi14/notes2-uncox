@@ -1,8 +1,9 @@
 <? class Db
 {
     private $connect;
+    private static $db;
     /******************************************************************** */
-    function __construct($options = null)
+    private function  __construct($options = null)
     {
         if ($options == null) {
             global $config;
@@ -22,6 +23,14 @@
         if ($this->connect->connect_error) {
             echo "Connection failed: " . $this->connect->connect_error;
         }
+    }
+    /******************************************************************** */
+    public static function getInstance($options = null)
+    {
+        if (self::$db == null) {
+            $db = new Db($options);
+        }
+        return self::$db;
     }
     /******************************************************************** */
     public function getConnection()
