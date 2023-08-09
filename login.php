@@ -12,13 +12,13 @@
 <body>
     <div class="tac">
         <img style="width: 200px;" src="images/notes.png" alt=""><br>
-        <form action="" ">
+        <form action="login-check.php" method="post">
             <label for="">UserName</label>
-            <input type=" text"><br><br>
+            <input name="uname" type="text"><br><br>
             <label for="">Password</label>
-            <input type="password"><br><br>
-            <input class="btnblue" type="submit" value="ُSend">
-        </form>
+            <input name="pass" type="password"><br><br>
+            <input class="btnblue" type="submit" value="ُSend"><br><br>
+            <a href="register.php">Create New Account</a>
     </div>
 </body>
 
