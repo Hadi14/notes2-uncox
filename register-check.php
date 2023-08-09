@@ -4,12 +4,6 @@ $db = Db::getInstance();
 $u = $_POST['uname'];
 $p = $_POST['pass'];
 $cp = $_POST['cpass'];
-echo $_POST['uname'];
-br();
-echo $_POST['pass'];
-br();
-echo $_POST['cpass'];
-br();
 
 
 $sql = "select * from users where username='$u' and password='$p' ";
@@ -26,6 +20,7 @@ if ($u == "" || $p == "" || $cp == "") {
     $res = $db->insert($sql);
     if ($res) {
         echo "Thankyou You Registeded.!!!";
+        echo "برای ورود  "  . "<a href='login.php'>اینجا</a>" . " کلیک کنید ";
     } else {
         echo "Register in Error.!!!";
     }
