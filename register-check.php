@@ -10,7 +10,9 @@ $sql = "select * from users where username='$u' and password='$p' ";
 $record = $db->query($sql);
 
 if ($u == "" || $p == "" || $cp == "") {
-    echo "Plase Fill All Boxes.!!!";
+    // echo "Plase Fill All Boxes.!!!";
+    $msg= "Plase Fill All Boxes.!!!";
+    require_once('fail.php');
 } else if ($p != $cp) {
     echo "Plase type the same Password and Confirm Password.!!!";
 } else if ($record != null) {
@@ -24,4 +26,5 @@ if ($u == "" || $p == "" || $cp == "") {
     } else {
         echo "Register in Error.!!!";
     }
+
 }

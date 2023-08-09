@@ -12,8 +12,10 @@
 <body>
     <div class="tac">
         <img style="width: 200px;" src="images/fail.png" alt="">
-        <h4> شما با خطا روبرو شدید.</h4>
-        <span>برای ورود به صفحه لوگین <a href="login.php"> اینجا </a>کلیک کنید</span>
+        <!-- <h4> شما با خطا روبرو شدید.</h4> -->
+        <!-- <span>برای ورود به صفحه لوگین <a href="login.php"> اینجا </a>کلیک کنید</span> -->
+        <h2>
+            <?= $msg ?> </h2>
     </div>
 </body>
 
