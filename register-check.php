@@ -11,20 +11,23 @@ $record = $db->query($sql);
 
 if ($u == "" || $p == "" || $cp == "") {
     // echo "Plase Fill All Boxes.!!!";
-    $msg= "Plase Fill All Boxes.!!!";
+    $msg = "Plase Fill All Boxes.!!!";
     require_once('fail.php');
 } else if ($p != $cp) {
-    echo "Plase type the same Password and Confirm Password.!!!";
+    $msg = "Plase type the same Password and Confirm Password.!!!";
+    require_once('fail.php');
 } else if ($record != null) {
-    echo "You Already Registerd.!!!";
+    $msg = "You Already Registerd.!!!";
+    require_once('fail.php');
 } else {
     $sql = "insert into users (username, password,level) values ('$u','$p','2') ";
     $res = $db->insert($sql);
     if ($res) {
-        echo "Thankyou You Registeded.!!!";
-        echo "برای ورود  "  . "<a href='login.php'>اینجا</a>" . " کلیک کنید ";
+        $msg = "Thankyou You Registeded.!!! <br>";
+        $msg .= "برای ورود  "  . "<a href='login.php'>اینجا</a>" . " کلیک کنید ";
+        require_once('fail.php');
     } else {
-        echo "Register in Error.!!!";
+        $msg = "Register in Error.!!!";
+        require_once('fail.php');
     }
-
 }
