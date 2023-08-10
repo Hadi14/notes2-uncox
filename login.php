@@ -11,9 +11,13 @@
 
 <body>
     <?
+    require_once('main.php');
     if (isset($_SESSION['uname'])) {
-        $msg = "شما قبلا وارد سیستم شده اید " . "<a href='index.php'> اینجا</a>" . "برای ورود کلیک کنید " . "<br>" . "برای خارج شدن کلیک کنید" . "<a href='logout.php'>خروج</a>";
+        echo $_SESSION['uname'];
+        $msg = "شما قبلا وارد سیستم شده اید " . "<a href='index.php'> اینجا</a>" .
+            "برای ورود کلیک کنید " . "<br>" . "برای خارج شدن کلیک کنید" . "<a href='logout.php'>خروج</a>";
         require_once('success.php');
+        exit;
     }
     ?>
     <div class="tac">
