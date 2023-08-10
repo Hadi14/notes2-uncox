@@ -9,5 +9,8 @@ $record = $db->query($sql);
 if ($record == null) {
     header("Location: fail.php");
 } else {
-    header("Location: success.php");
+    $msg = "<h4>تبریک شما به سیستم وارد شدید.</h4> <br> <span>برای ورود به صفحه اصلی<a href='index.php'> اینجا </a>کلیک کنید</span>";
+    require_once('success.php');
+    // header("Location: success.php");
+    $_SESSION['uname'] = $u;
 }

@@ -12,8 +12,9 @@
 <body>
     <div class="tac">
         <img style="width: 200px;" src="images/success.png" alt="">
-        <h4>تبریک شما به سیستم وارد شدید.</h4>
-        <span>برای ورود به صفحه اصلی<a href="index.php"> اینجا </a>کلیک کنید</span>
+        <!-- <h4>تبریک شما به سیستم وارد شدید.</h4>
+        <span>برای ورود به صفحه اصلی<a href="index.php"> اینجا </a>کلیک کنید</span> -->
+        <h4><?= $msg ?></h4>
     </div>
 </body>
 

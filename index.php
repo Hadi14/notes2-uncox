@@ -13,6 +13,7 @@
     <?
 
     require('main.php');
+    echo $_SESSION['uname'];
     $sql = "select * from x_note";
     $db = Db::getInstance();
     $records = $db->first($sql);

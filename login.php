@@ -10,6 +10,12 @@
 </head>
 
 <body>
+    <?
+    if (isset($_SESSION['uname'])) {
+        $msg = "شما قبلا وارد سیستم شده اید " . "<a href='index.php'> اینجا</a>" . "برای ورود کلیک کنید " . "<br>" . "برای خارج شدن کلیک کنید" . "<a href='logout.php'>خروج</a>";
+        require_once('success.php');
+    }
+    ?>
     <div class="tac">
         <img style="width: 200px;" src="images/notes.png" alt=""><br>
         <form action="login-check.php" method="post">
@@ -20,6 +26,7 @@
             <input class="btnblue" type="submit" value="ُSend"><br><br>
             <a href="register.php">Create New Account</a>
     </div>
+
 </body>
 
 </html>
